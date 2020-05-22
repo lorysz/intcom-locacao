@@ -1,0 +1,23 @@
+<form [formGroup]="frmDevolucao">
+    <div class="form-group">
+        <label class="required" for="cliente">Cliente</label>
+        <input type="text" class="form-control" id="cliente" formControlName="cliente" readonly>
+    </div>
+    <div class="form-group">
+        <label class="required" for="filme">Filme</label>
+        <input type="text" class="form-control" id="filme" formControlName="filme" readonly>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm">
+                <label class="required" for="dataLocacao">Data Locação</label>
+                <input type="text" class="form-control" id="dataLocacao" formControlName="dataLocacao" readonly>
+            </div>
+            <div class="col-sm">
+                <label class="required" for="dataDevolucao">Data Devolução</label>
+                <input type="date" class="form-control" id="dataDevolucao" formControlName="dataDevolucao">
+            </div>
+        </div>
+    </div>
+    <button [disabled]="this.frmDevolucao.invalid" type="submit" class="btn btn-primary mb-2" (click)="salvar()">Salvar</button>
+</form>

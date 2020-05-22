@@ -1,0 +1,17 @@
+<form [formGroup]="frmLocacao">
+    <div class="form-group">
+        <label class="required" for="cliente">Cliente</label>
+        <input type="text" class="form-control" id="cliente" formControlName="nome" readonly>
+    </div>
+    <div class="form-group">
+        <label class="required" for="filme">Filme</label>
+        <select class="form-control" id="filme" formControlName="idFilme">
+            <option *ngFor="let filme of filmes" value="{{filme.idFilme}}">{{filme.nome}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="required" for="dataLocacao">Data Locação</label>
+        <input type="date" class="form-control" id="dataLocacao" formControlName="dataLocacao">
+    </div>
+    <button [disabled]="this.frmLocacao.invalid" type="submit" class="btn btn-primary mb-2" (click)="salvar()">Salvar</button>
+</form>
